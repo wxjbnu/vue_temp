@@ -6,7 +6,7 @@ import App from './App'
 import store from './store'
 import router from './router'
 import { sync } from 'vuex-router-sync'
-
+import 'components/global.js'
 
 Vue.config.productionTip = false
 const unsync = sync(store, router)

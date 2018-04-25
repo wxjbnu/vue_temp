@@ -1,6 +1,8 @@
 <template>
   <div class="home">
     <h1>{{ msg }}</h1>
+    <input type="text" v-model="searchInputValue">
+    <HelloWorld></HelloWorld>
     <router-view/>
   </div>
 </template>
@@ -10,9 +12,23 @@ export default {
   name: 'home',
   data () {
     return {
-      msg: '首页'
+      msg: '首页',
+      searchInputValue: ''
+    }
+  },
+  methods: {
+    fetchPostList() {
+      console.log(111)
+    }
+  },
+  watch: {
+    searchInputValue: {
+      // 马上执行watch
+      handler: 'fetchPostList',
+      immediate: true
     }
   }
+
 }
 </script>
 
