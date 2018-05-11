@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style {{#less}}lang="less"{{/less}}>
 html, body{
   height: 100%;
   margin: 0;
