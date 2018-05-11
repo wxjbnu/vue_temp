@@ -1,7 +1,7 @@
 {
-  "name": "21f_discovery",
+  "name": "{{name}}",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "{{description}}",
   "author": "wxj",
   "private": true,
   "scripts": {
