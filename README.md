@@ -1,6 +1,6 @@
-# 21f_discovery
+# Vue模板
 
-> A Vue.js project
+> 目前自带router,vuex,vue-resource.可选择less
 
 ## Build Setup
 
