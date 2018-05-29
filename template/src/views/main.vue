@@ -1,10 +1,19 @@
-<template>
+<template{{#pug}} lang="pug"{{/pug}}>
+
+  {{#pug}}
+  .home
+    h1 \{{msg}}
+    input(type="text" v-model="commentContent")
+    HelloWorld
+    router-view
+  {{else}}
   <div class="home">
-    <h1>{{ msg }}</h1>
+    <h1>\{{ msg }}</h1>
     <input type="text" v-model="searchInputValue">
     <HelloWorld></HelloWorld>
     <router-view/>
   </div>
+  {{/pug}}
 </template>
 
 <script>

@@ -1,8 +1,12 @@
-<template>
+<template{{#pug}} lang="pug"{{/pug}}>
+  {{#pug}}
+  #app
+    router-view
+  {{else}}
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
     <router-view/>
   </div>
+  {{/pug}}
 </template>
 
 <script>

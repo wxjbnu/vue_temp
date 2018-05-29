@@ -1,7 +1,13 @@
-<template>
+<template{{#pug}} lang="pug"{{/pug}}>
+
+  {{#pug}}
+  .login
+  {{else}}
   <div class="login">
     
   </div>
+  {{/pug}}
+  
 </template>
 
 <script>

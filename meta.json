@@ -21,9 +21,14 @@
       "default": "MIT"
     },
     "less": {
-       "type": "confirm",
-       "message": "Use less?",
-       "default": false
+      "type": "confirm",
+      "message": "Use less?",
+      "default": false
+    },
+    "pug": {
+      "type": "confirm",
+      "message": "Use pug?",
+      "default": false
     }
   },
   "completeMessage": "{{#inPlace}}To get started:\n\n  npm install\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev{{/inPlace}}"

@@ -1,8 +1,14 @@
-<template>
+<template{{#pug}} lang="pug"{{/pug}}>
+  {{#pug}}
+  .hello
+    h1 \{{msg}}
+    h2 这个是组件
+  {{else}}
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>\{{ msg }}</h1>
     <h2>这个是组件</h2>
   </div>
+  {{/pug}}
 </template>
 
 <script>
