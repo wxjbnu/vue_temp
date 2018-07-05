@@ -11,6 +11,7 @@
 </template>
 
 <script>
+alert('login page')
 export default {
   name: 'login',
   data () {

@@ -3,8 +3,8 @@ import Router from 'vue-router'
 
 // import HelloWorld from '@/components/HelloWorld'
 
-import Login from '@/views/login'
-import Main from '@/views/main'
+// import Login from '@/views/login'
+// import Main from '@/views/main'
 
 Vue.use(Router)
 
@@ -13,11 +13,12 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: Login
-    },{ // Main
+      component: () => import('@/views/login')
+    },
+    { // Main
       path:   '/',
       name:   'main',
-      component:  Main,
+      component:  () => import('@/views/main'),
       children: [
         // { // 商品列表 暂时没用
         //   path:   '/crowdfunding',

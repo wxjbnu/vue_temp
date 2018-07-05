@@ -12,11 +12,12 @@
 </template>
 
 <script>
+alert('async components')
 export default {
-  name: 'HelloWorld',
+  name: 'asyncCom',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to asyncCom'
     }
   }
 }

@@ -10,12 +10,12 @@ const requireComponent = require.context(
 )
  
 requireComponent.keys().forEach(fileName => {
-  const componentConfig = requireComponent(fileName)
- 
-  const componentName = capitalizeFirstLetter(
-    fileName.replace(/^\.\//, '').replace(/\.\w+$/, '')
-    //因为得到的filename格式是: './baseButton.vue', 所以这里我们去掉头和尾，只保留真正的文件名
-  )
- 
-  Vue.component(componentName, componentConfig.default || componentConfig)
+  if (fileName.indexOf('async') === -1) { // 如果是异步组件就不需要马上加载
+    const componentConfig = requireComponent(fileName)
+    const componentName = capitalizeFirstLetter(
+      fileName.replace(/^\.\//, '').replace(/\.\w+$/, '')
+      //因为得到的filename格式是: './baseButton.vue', 所以这里我们去掉头和尾，只保留真正的文件名
+    )
+    Vue.component(componentName, componentConfig.default || componentConfig)
+  }
 })

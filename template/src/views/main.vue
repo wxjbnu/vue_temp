@@ -4,13 +4,18 @@
   .home
     h1 \{{msg}}
     input(type="text" v-model="commentContent")
-    HelloWorld
+    component(:is="'asyncCom'" v-if="showAsyncCom")
+    button(@click="showAsyncCom = !showAsyncCom") 显示异步组件
     router-view
   {{else}}
   <div class="home">
     <h1>\{{ msg }}</h1>
     <input type="text" v-model="searchInputValue">
     <HelloWorld></HelloWorld>
+    <component
+      v-if="showAsyncCom"
+      :is="'asyncCom'"></component>
+    <button @click="showAsyncCom = !showAsyncCom">显示异步组件</button>  
     <router-view/>
   </div>
   {{/pug}}
@@ -22,8 +27,13 @@ export default {
   data () {
     return {
       msg: '首页',
-      searchInputValue: ''
+      searchInputValue: '',
+      showAsyncCom: false, // 异步组件
     }
+  },
+  components: {
+    // asyncCom: resolve => {require(['./../components/asyncCom.vue'], resolve)}
+    'asyncCom': () => import('./../components/asyncCom')
   },
   methods: {
     fetchPostList() {
